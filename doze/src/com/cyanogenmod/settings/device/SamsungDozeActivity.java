@@ -12,11 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+import com.cyanogenmod.settings.device.R;
  */
 package com.cyanogenmod.settings.device;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import com.cyanogenmod.settings.device.R;
 import android.os.Bundle;
 
 import com.android.settingslib.drawer.SettingsDrawerActivity;

@@ -5,5 +5,17 @@ type proc_cpw, fs_type;
 type proc_cpt, fs_type;
 type sysfs_restart_cpc, fs_type, sysfs_type;
 type sysfs_dynamic_pclk, fs_type, sysfs_type;
-type at_distributor, exec_type;
-type modemd, exec_type;
+
+# Все типы _exec для blkid, sgdisk, userinit, clatd и т.д. 
+# мы УДАЛИЛИ отсюда, так как они уже есть в Android 8.1
+
+# Специфичные для Samsung процессы
+type at_distributor, domain;
+type at_distributor_exec, exec_type, file_type;
+type modemd, domain;
+type modemd_exec, exec_type, file_type;
+type gpsd, domain;
+type gpsd_exec, exec_type, file_type;
+type gps_data_file, file_type, data_file_type, core_data_file_type;
+type wpa, domain;
+type wpa_exec, exec_type, file_type;

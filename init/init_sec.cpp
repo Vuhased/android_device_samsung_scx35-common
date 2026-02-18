@@ -34,6 +34,17 @@
 #include "log.h"
 #include "util.h"
 
+#include <android-base/logging.h>
+#include <android-base/properties.h>
+#include <android-base/stringprintf.h>
+
+using android::base::GetProperty;
+using android::init::property_set;
+
+#define property_get(key) GetProperty(key, "")
+#define ERROR(x...) LOG(ERROR) << android::base::StringPrintf(x)
+#define PROP_NAME_MAX 32
+
 std::string bootloader;
 std::string device;
 
@@ -80,7 +91,7 @@ void vendor_load_properties()
 	 */
 
 	FILE* file;
-	char* simslot_count_path = "/proc/simslot_count";
+	const char* simslot_count_path = "/proc/simslot_count";
 	char simslot_count[PROP_NAME_MAX] = "\0"; // Terminate NULL character
 
 	file = fopen(simslot_count_path, "r");
